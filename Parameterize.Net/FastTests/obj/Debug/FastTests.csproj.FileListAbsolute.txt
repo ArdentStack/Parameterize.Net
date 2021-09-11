@@ -1,0 +1,10 @@
+E:\repos\Parameterize.Net\FastTests\bin\Debug\FastTests.exe.config
+E:\repos\Parameterize.Net\FastTests\bin\Debug\FastTests.exe
+E:\repos\Parameterize.Net\FastTests\bin\Debug\FastTests.pdb
+E:\repos\Parameterize.Net\FastTests\bin\Debug\Parameterize.Net.dll
+E:\repos\Parameterize.Net\FastTests\bin\Debug\Parameterize.Net.pdb
+E:\repos\Parameterize.Net\FastTests\obj\Debug\FastTests.csprojAssemblyReference.cache
+E:\repos\Parameterize.Net\FastTests\obj\Debug\FastTests.csproj.CoreCompileInputs.cache
+E:\repos\Parameterize.Net\FastTests\obj\Debug\FastTests.csproj.CopyComplete
+E:\repos\Parameterize.Net\FastTests\obj\Debug\FastTests.exe
+E:\repos\Parameterize.Net\FastTests\obj\Debug\FastTests.pdb

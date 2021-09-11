@@ -1,0 +1,12 @@
+C:\Users\fasoo\source\repos\Parameterize.Net\Parameterize.Net\bin\Debug\Parameterize.Net.dll
+C:\Users\fasoo\source\repos\Parameterize.Net\Parameterize.Net\bin\Debug\Parameterize.Net.pdb
+C:\Users\fasoo\source\repos\Parameterize.Net\Parameterize.Net\obj\Debug\Parameterize.Net.csprojAssemblyReference.cache
+C:\Users\fasoo\source\repos\Parameterize.Net\Parameterize.Net\obj\Debug\Parameterize.Net.csproj.CoreCompileInputs.cache
+C:\Users\fasoo\source\repos\Parameterize.Net\Parameterize.Net\obj\Debug\Parameterize.Net.dll
+C:\Users\fasoo\source\repos\Parameterize.Net\Parameterize.Net\obj\Debug\Parameterize.Net.pdb
+E:\repos\Parameterize.Net\Parameterize.Net\bin\Debug\Parameterize.Net.dll
+E:\repos\Parameterize.Net\Parameterize.Net\bin\Debug\Parameterize.Net.pdb
+E:\repos\Parameterize.Net\Parameterize.Net\obj\Debug\Parameterize.Net.csprojAssemblyReference.cache
+E:\repos\Parameterize.Net\Parameterize.Net\obj\Debug\Parameterize.Net.csproj.CoreCompileInputs.cache
+E:\repos\Parameterize.Net\Parameterize.Net\obj\Debug\Parameterize.Net.dll
+E:\repos\Parameterize.Net\Parameterize.Net\obj\Debug\Parameterize.Net.pdb

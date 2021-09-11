@@ -1,0 +1,10 @@
+E:\repos\Parameterize.Net\ConfigTests\obj\Debug\ConfigTests.csprojAssemblyReference.cache
+E:\repos\Parameterize.Net\ConfigTests\obj\Debug\ConfigTests.csproj.CoreCompileInputs.cache
+E:\repos\Parameterize.Net\ConfigTests\bin\Debug\ConfigTests.exe.config
+E:\repos\Parameterize.Net\ConfigTests\bin\Debug\ConfigTests.exe
+E:\repos\Parameterize.Net\ConfigTests\bin\Debug\ConfigTests.pdb
+E:\repos\Parameterize.Net\ConfigTests\bin\Debug\Parameterize.Net.dll
+E:\repos\Parameterize.Net\ConfigTests\bin\Debug\Parameterize.Net.pdb
+E:\repos\Parameterize.Net\ConfigTests\obj\Debug\ConfigTests.csproj.CopyComplete
+E:\repos\Parameterize.Net\ConfigTests\obj\Debug\ConfigTests.exe
+E:\repos\Parameterize.Net\ConfigTests\obj\Debug\ConfigTests.pdb

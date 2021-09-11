@@ -1,0 +1,16 @@
+E:\repos\Parameterize.Net\ParameterTest\obj\Debug\ParameterTest.csprojAssemblyReference.cache
+E:\repos\Parameterize.Net\ParameterTest\obj\Debug\ParameterTest.csproj.CoreCompileInputs.cache
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\ParameterTest.dll
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\ParameterTest.pdb
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\Parameterize.Net.dll
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\Parameterize.Net.pdb
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\repos\Parameterize.Net\ParameterTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\repos\Parameterize.Net\ParameterTest\obj\Debug\ParameterTest.csproj.CopyComplete
+E:\repos\Parameterize.Net\ParameterTest\obj\Debug\ParameterTest.dll
+E:\repos\Parameterize.Net\ParameterTest\obj\Debug\ParameterTest.pdb
