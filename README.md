@@ -1,5 +1,5 @@
 # Parametrize.Net
-Parameterize.Net is a library that allows developer to represent complex objects using float array.
+Parameterize.Net is a library that allows developers to represent complex objects using float arrays.
 
 # Todo
 * allow for static float array parameters.
