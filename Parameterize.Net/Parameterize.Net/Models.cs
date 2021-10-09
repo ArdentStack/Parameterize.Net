@@ -395,7 +395,7 @@ namespace Parameterize
 
             }
         }
-
+        
         public static T Create<T>(float[] param, params object[] args)
         {
             if(args.Length>0&&args[0] is ParameterSegmentConfiguration aa)
@@ -408,19 +408,33 @@ namespace Parameterize
             }
             return CreateC<T>(param, null, args);
         }
-
+        /// <summary>
+        /// Create an object of type T with the set parameters
+        /// </summary>
+        /// <typeparam name="T">The type of the object to be created</typeparam>
+        /// <param name="param">Array of parameters matching the object type constraint</param>
+        /// <param name="config">Constraint configuration</param>
+        /// <param name="args">Creation arugments for defined init function</param>
+        /// <returns></returns>
         static T CreateC<T>(float[] param,ParameterSegmentConfiguration config,object [] args)
         {
+            // List of float paramaters encoding the object
             var workingparam = new float[param.Length];
+            //Copy from arugments
             Array.Copy(param, 0, workingparam, 0, param.Length);
-            
+            //Create parameter pack dictionary
             Dictionary<int, ParameterPack> packs = new Dictionary<int, ParameterPack>();
+            //Create parameter segment for root type
             var rootSegment = new ParameterSegment(typeof(T), null, false,null,config);
+            //??????
             rootSegment.SelectorParameter.IsLocked = false;
+            //Get all configurable/parameterized segments in the root semgent
             var segments = rootSegment.GetAllChildren();
-         
+            //Add root segment to the list of all segments
             segments.Add(rootSegment);
+            //Get all root segment parameters
             var allparams = rootSegment.GetAllParameters();
+            //Check for locked values
             for(int iu = 0;iu<allparams.Count;iu++)
             {
                 var i = allparams[iu];
@@ -440,26 +454,32 @@ namespace Parameterize
 
                 }
             }
+            //create pack for each segment (child & child of child etc...)
             foreach (var i in segments)
             {
 
+                //Don't Create if it is selectable and the value is 0
                 if (i.CanBeDisabled && i.SelectorParameter.Constraint.Clip(workingparam[i.SelectorParameter.Id]) == 0)
                 {
                     continue;
                 }
+                //Create
                 else
                 {
 
+                    //Get type
                     var type = i.GetSelectorType((int)i.SelectorParameter.Constraint.Clip(workingparam[i.SelectorParameter.Id]));
+                    //Get parameter pack for the object
                     var pack = ParameterPack.CreatePackFor(type);
+                    //set each parameter of the pack
                     foreach (var j in i.Parameters)
                     {
-
-
+                       
+                        
                         if (pack.ContainsKey(j.Key))
                         {
 
-
+                            
                             if (j.Value.IsLocked)
                             {
 
@@ -467,20 +487,23 @@ namespace Parameterize
                             }
                             else
                             {
+                                //set from working params
                                 pack.Set(j.Key, j.Value.Constraint.Clip(workingparam[j.Value.Id]));
 
                             }
                         }
                     }
-                    
+                    //add to finished packs
                     packs.Add(i.SelectorParameter.Id, pack);
                 }
             }
+            //Go through all segments
             foreach (var i in segments)
             {
+                //if this segment is set
                 if (packs.ContainsKey(i.SelectorParameter.Id))
                 {
-
+                    //go through the segments children
                     foreach (var j in i.Children)
                     {
                         if (!packs.ContainsKey(j.SelectorParameter.Id))
