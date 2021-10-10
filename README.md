@@ -1,5 +1,5 @@
 # Parametrize.Net
-Parameterize.Net is a library that allows developer to represent complex objects using float array.
+Parameterize.Net is a library that allows developers to represent complex objects using float arrays.
 
 # Todo
 * allow for static float array parameters.
@@ -13,7 +13,6 @@ class Program
     {
         // Create random number generator
         var rng = new Random();
-        Console.WriteLine(Parameterize.ParameterSegment.PrettyStringSegment(new ParameterSegment(typeof(PetStore), null, false),0));
         // Get the constraints for the float array.
         var constraints = Parameterizer.GetConstraints<PetStore>();
         while (true)
