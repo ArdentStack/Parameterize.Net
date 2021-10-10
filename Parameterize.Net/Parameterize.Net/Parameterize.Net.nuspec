@@ -7,10 +7,10 @@
     <authors>Faisal Alsajjan</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/PasoUnleashed/Parametrize.Net</projectUrl>
+    <projectUrl>https://github.com/PasoUnleashed/Parameterize.Net</projectUrl>
     <description>Parameterize.Net is a library that allows developers to represent complex structures as float arrays</description>
-    <releaseNotes>First Release</releaseNotes>
+    <releaseNotes>Updated git repository link</releaseNotes>
     <copyright>$copyright$</copyright>
-    <tags>OptimizationProblems Optimization GeneticAlogrithms Genetic Algorithm Constrain</tags>
+    <tags>Optimization_Problems Optimization Genetic_Alogrithms Genetic Algorithm Constraint_Problem</tags>
   </metadata>
 </package>
