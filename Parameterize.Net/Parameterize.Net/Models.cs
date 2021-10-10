@@ -206,8 +206,9 @@ namespace Parameterize
         {
             if (parent == null)
             {
+                var ret = ids;
                 ids += 1;
-                return ids - 1;
+                return ret;
             }
             else
             {
@@ -418,6 +419,11 @@ namespace Parameterize
         /// <returns></returns>
         static T CreateC<T>(float[] param,ParameterSegmentConfiguration config,object [] args)
         {
+            var cons = GetConstraints<T>(config);
+            if (param.Length != cons.Length)
+            {
+                throw new Exception($"invalid param length, expected float[{cons.Length}] got float[{param.Length}]");
+            }
             // List of float paramaters encoding the object
             var workingparam = new float[param.Length];
             //Copy from arugments
@@ -565,6 +571,7 @@ namespace Parameterize
             var all = rootSegment.GetAllParameters();
             
             var constraints = new Constraint[all.Count];
+         
             foreach (var i in all)
             {   constraints[i.Id] = i.Constraint;
             }
