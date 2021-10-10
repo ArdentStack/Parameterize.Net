@@ -113,8 +113,12 @@ namespace Parameterize
             this.type = ParameterConstraintType.MinMax;
             this.def = new Constraint(min, max, percision);
         }
-
-       public ParameterConstraintType Type { get => type; set => type = value; }
+        public ParameterAttribute(int min, int max)
+        {
+            this.type = ParameterConstraintType.MinMax;
+            this.def = new Constraint(min, max);
+        }
+        public ParameterConstraintType Type { get => type; set => type = value; }
        public Constraint DefaultConstraint { get => def; set => def = value; }
     }
     [System.AttributeUsage(System.AttributeTargets.Class)]
@@ -131,7 +135,9 @@ namespace Parameterize
     {
         FLOAT,INT,PARAMETERPACK,STRING,PARAMETERIZEDES,ARRAY
     }
-    
+    /// <summary>
+    /// Describes a class parameter
+    /// </summary>
     public class ParameterDescriptor
     {
         ParameterType type;
@@ -181,6 +187,9 @@ namespace Parameterize
         }
         
     }
+    /// <summary>
+    /// Describes the parameters for a whole class
+    /// </summary>
     public class ParameterPackDescriptor
     {
         Type type;
@@ -284,6 +293,9 @@ namespace Parameterize
             throw new Exception("Descriptor not found for: " + name);
         }
     }
+    /// <summary>
+    /// An object that stores the parameters of an object that's being constructed
+    /// </summary>
     public class ParameterPack
     {
         Type type;
