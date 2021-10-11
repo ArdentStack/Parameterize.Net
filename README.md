@@ -8,7 +8,7 @@ Parameterize.Net is a library that allows developers to represent complex object
 * more flexible constraint definition
 # Installation
 
-![Nuget](https://img.shields.io/nuget/v/Parameterize.Net)
+[![Nuget](https://img.shields.io/nuget/v/Parameterize.Net)](https://www.nuget.org/packages/Parameterize.Net/)
 
 
 # Usage
