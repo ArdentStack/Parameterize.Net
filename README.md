@@ -89,8 +89,8 @@ class Program
             // Generate random float array according to the constraints
 
             float[] parameters = Constraint.GetRandom(constraints);
-            // Create the object from the parameters
-            var petstore = Parameterizer.Create<PetStore>(parameters,config);
+            // Create the object from the parameters                        
+            var petstore = Parameterizer.Create<PetStore>(parameters,config,"My PetStore Name"); //The string argument at the end will go to an OnInitFunction in the type PetStore.
 
             foreach (var animal in petstore.Animals)
             {
