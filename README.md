@@ -9,7 +9,7 @@ Parameterize.Net is a library that allows developers to represent complex object
 # Installation
 
 ```
-dotnet add package Parameterize.Net --version 1.1.3
+dotnet add package Parameterize.Net --version 1.2.0
 ```
 
 # Usage
