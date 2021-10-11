@@ -11,7 +11,7 @@
 # DsStore
 *.DS_Store
 .DS_Store
-
+**/.DS_Store
 # User-specific files
 *.rsuser
 *.suo
