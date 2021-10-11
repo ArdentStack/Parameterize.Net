@@ -13,7 +13,7 @@ namespace Parameterize
     public struct Constraint
     {
         static Random baseRng = new Random();
-        short percision;
+        short precision;
         float minVal, maxVal;
         static Constraint any = new Constraint();
         /// <summary>
@@ -24,7 +24,7 @@ namespace Parameterize
         /// <param name="percision">how many decimal places (0 is Int)</param>
         public Constraint(float minVal, float maxVal, short percision)
         {
-            this.percision = percision;
+            this.precision = percision;
             this.minVal = minVal;
             this.maxVal = maxVal;
         }
@@ -37,12 +37,12 @@ namespace Parameterize
         {
             this.minVal = minVal;
             this.maxVal = maxVal;
-            percision = 0;
+            precision = 0;
         }
         /// <summary>
         /// How many decimal places (0 int)
         /// </summary>
-        public short Percision { get => percision; }
+        public short Precision { get => precision; }
         /// <summary>
         /// The min value the cosntrained value can take
         /// </summary>
@@ -74,11 +74,11 @@ namespace Parameterize
             {
                 return minVal;
             }
-            if(percision == 0)
+            if(precision == 0)
             {
                 return (int)rng.Next((int)minVal, (int)maxVal+1);
             }
-            return (float)Math.Round(minVal + (((rng.NextDouble()) * (maxVal - MinVal))), percision);
+            return (float)Math.Round(minVal + (((rng.NextDouble()) * (maxVal - MinVal))), precision);
         }
         /// <summary>
         /// Clip a value to meet the constraint
@@ -104,7 +104,7 @@ namespace Parameterize
             }
             else
             {
-                return round?(float)Math.Round(x, percision):x;
+                return round?(float)Math.Round(x, precision):x;
             }
         }
         /// <summary>
@@ -120,7 +120,7 @@ namespace Parameterize
                 throw new IndexOutOfRangeException();
             }
            
-            return Clip(MinVal + (float)Math.Round(((maxVal - MinVal) * (((float)i) / ((float)total))), percision));
+            return Clip(MinVal + (float)Math.Round(((maxVal - MinVal) * (((float)i) / ((float)total))), precision));
         }
         /// <summary>
         /// Compare to constraints
@@ -133,7 +133,7 @@ namespace Parameterize
             if (obj is Constraint c)
             {
                
-                return c.minVal == minVal && c.maxVal == maxVal && c.percision == percision;
+                return c.minVal == minVal && c.maxVal == maxVal && c.precision == precision;
             }
             return false;
         }
@@ -158,7 +158,7 @@ namespace Parameterize
         }
         public override int GetHashCode()
         {
-            return (minVal.ToString() + ":" + maxVal.ToString() + ":" + percision.ToString()).GetHashCode();
+            return (minVal.ToString() + ":" + maxVal.ToString() + ":" + precision.ToString()).GetHashCode();
         }
         /// <summary>
         /// Pretty constraint represntation
@@ -166,7 +166,7 @@ namespace Parameterize
         /// <returns></returns>
         public override string ToString()
         {
-            return "[" + minVal.ToString() + "-" + maxVal.ToString() + "] % " + percision.ToString();
+            return "[" + minVal.ToString() + "-" + maxVal.ToString() + "] % " + precision.ToString();
         }
         /// <summary>
         /// Returns a random float array using an array of constraints
