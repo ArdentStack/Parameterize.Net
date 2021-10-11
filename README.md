@@ -5,7 +5,8 @@ Parameterize.Net is a library that allows developers to represent complex object
 # Todo
 * Documentation and code comments
 * Allow for float array "parameters".
-* more flexible constraint definition
+* More flexible constraint definition
+* Implementing multitasking where possible.
 # Installation
 
 [![Nuget](https://img.shields.io/nuget/v/Parameterize.Net)](https://www.nuget.org/packages/Parameterize.Net/)
