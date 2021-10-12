@@ -227,39 +227,43 @@ namespace Parameterize
                         ParameterType ptp;
                         if (i.PropertyType == typeof(float))
                         {
-                           
+
                             ret.Add(new ParameterDescriptor(i.Name, ParameterType.FLOAT, paramt));
 
                         }
                         else if (i.PropertyType == typeof(int))
                         {
-                            
+
                             ret.Add(new ParameterDescriptor(i.Name, ParameterType.INT, paramt));
                         }
                         else if (i.PropertyType == typeof(string))
                         {
-                            
-                            ret.Add(new ParameterDescriptor(i.Name, ParameterType.STRING,paramt));
+
+                            ret.Add(new ParameterDescriptor(i.Name, ParameterType.STRING, paramt));
                         }
-                        
-                        else if (i.PropertyType.IsGenericType && i.PropertyType.GetGenericTypeDefinition().IsAssignableFrom(typeof(List<>)) && IsParameterized(i.PropertyType.GenericTypeArguments[0]))
+
+                        else if (i.PropertyType.IsGenericType && i.PropertyType.GetGenericTypeDefinition().IsAssignableFrom(typeof(List<>)))// && IsParameterized(i.PropertyType.GenericTypeArguments[0]))
                         {
-                           
+
                             ret.Add(new ParameterDescriptor(i.Name, ParameterType.PARAMETERIZEDES, i.PropertyType.GenericTypeArguments[0], paramt));
                         }
-                        else if (IsParameterized(i.PropertyType))
+                        /*else if (IsParameterized(i.PropertyType))
                         {
                             
 
                             ret.Add(new ParameterDescriptor(i.Name, ParameterType.PARAMETERPACK, i.PropertyType,paramt));
-                        }
-                        else if (i.PropertyType.IsArray&&i.MemberType.GetType().Equals(typeof(float)))
+                        }*/
+                        else if (i.PropertyType.IsArray && i.MemberType.GetType().Equals(typeof(float)))
                         {
                             ret.Add(new ParameterDescriptor(i.Name, ParameterType.ARRAY, i.PropertyType, paramt));
                         }
+                        else if (!i.PropertyType.IsValueType) 
+                        {
+                            ret.Add(new ParameterDescriptor(i.Name, ParameterType.PARAMETERPACK, i.PropertyType, paramt));
+                        }
                         else
                         {
-                            throw new Exception();
+                            ret.Add(new ParameterDescriptor(i.Name, ParameterType.PARAMETERPACK, i.PropertyType, paramt));
                         }
 
 
