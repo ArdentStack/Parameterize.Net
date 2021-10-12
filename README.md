@@ -82,7 +82,7 @@ class Program
         config.Animals.Lives = new Constraint(1,5);
 
         // Get the constraints for the float array.
-        var constraints = Parameterizer.GetConstraints<PetStore>(config);
+        Constraint[] constraints = Parameterizer.GetConstraints<PetStore>(config);
 
         while (true)
         {
