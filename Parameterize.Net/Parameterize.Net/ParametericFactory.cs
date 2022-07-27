@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Parameterize.Net
+namespace Parameterize
 {
     public class ParametricFactory<T>
     {
