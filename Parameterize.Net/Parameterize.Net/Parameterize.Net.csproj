@@ -8,7 +8,7 @@
     <Description>Parameterize.Net is a library that allows developers to build complex structures from class definitions using float arrays.  </Description>
     <ReleaseVersion>1.2.0</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
-    <Version>1.3.0</Version>
+    <Version>1.4.0</Version>
     <PackageReleaseNotes>if an object property of type X is declared as a parameter. X no longer has to be declared parameterized. However, there must be one implementation of the type X that is tagged as [Parameterized]</PackageReleaseNotes>
   </PropertyGroup>
 
