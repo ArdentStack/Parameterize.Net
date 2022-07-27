@@ -9,6 +9,7 @@ namespace ParameterizeTests
         [TestMethod]
         public void TestMethod1()
         {
+            
         }
     }
     
