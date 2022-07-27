@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.809.4
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parameterize.Net", "Parameterize.Net\Parameterize.Net.csproj", "{F05395BE-1E9D-4DCB-842B-D19CEFC1721A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parameterize.Net", "Parameterize.Net\Parameterize.Net.csproj", "{F05395BE-1E9D-4DCB-842B-D19CEFC1721A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParameterizeTests", "ParameterizeTests\ParameterizeTests.csproj", "{C4F35794-C3A0-489C-9C86-DC7149CF76C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F05395BE-1E9D-4DCB-842B-D19CEFC1721A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F05395BE-1E9D-4DCB-842B-D19CEFC1721A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F05395BE-1E9D-4DCB-842B-D19CEFC1721A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4F35794-C3A0-489C-9C86-DC7149CF76C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4F35794-C3A0-489C-9C86-DC7149CF76C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4F35794-C3A0-489C-9C86-DC7149CF76C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4F35794-C3A0-489C-9C86-DC7149CF76C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

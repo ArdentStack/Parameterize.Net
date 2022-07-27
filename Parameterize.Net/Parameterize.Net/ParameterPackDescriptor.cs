@@ -44,7 +44,7 @@ namespace Parameterize
                 
                 foreach (var j in Attribute.GetCustomAttributes(i, typeof(ParameterAttribute)))
                 {
-                    if (j is ParameterAttribute paramt)
+                    if (j is ParameterAttribute paramt&&!(j is ElementConstraintAttribute))
                     {
                         ParameterType ptp;
                         if (i.PropertyType == typeof(float))
@@ -75,9 +75,9 @@ namespace Parameterize
 
                             ret.Add(new ParameterDescriptor(i.Name, ParameterType.PARAMETERPACK, i.PropertyType,paramt));
                         }*/
-                        else if (i.PropertyType.IsArray && i.MemberType.GetType().Equals(typeof(float)))
+                        else if (i.PropertyType.IsArray )//&& i.MemberType.GetType().Equals(typeof(float)))
                         {
-                            ret.Add(new ParameterDescriptor(i.Name, ParameterType.ARRAY, i.PropertyType, paramt));
+                            ret.Add(new ParameterDescriptor(i.Name, ParameterType.ARRAY, i.PropertyType, paramt,((ElementConstraintAttribute) i.GetCustomAttributes(typeof(ElementConstraintAttribute)).First())));
                         }
                         else if (!i.PropertyType.IsValueType) 
                         {

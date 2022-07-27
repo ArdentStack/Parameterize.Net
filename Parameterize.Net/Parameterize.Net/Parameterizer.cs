@@ -146,7 +146,7 @@ namespace Parameterize
                     {
                        
                         
-                        if (pack.ContainsKey(j.Key))
+                        if (pack.ContainsKey(j.Key.Split('/').First()))
                         {
 
                             

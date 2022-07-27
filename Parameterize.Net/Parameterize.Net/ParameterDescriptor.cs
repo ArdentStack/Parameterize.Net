@@ -18,6 +18,7 @@ namespace Parameterize
         string name;
         ParameterAttribute paramt;
         Type subtype;
+        ParameterAttribute parame;
         public ParameterDescriptor(string name,ParameterType type,ParameterAttribute paramt)
         {
             this.type = type;
@@ -32,7 +33,14 @@ namespace Parameterize
             this.subtype = subtype;
             this.paramt = paramt;
         }
-      
+        public ParameterDescriptor(string name, ParameterType type, Type subtype,ParameterAttribute paramt,ElementConstraintAttribute parame)
+        {
+            this.type = type;
+            this.name = name;
+            this.subtype = subtype;
+            this.paramt = paramt;
+            this.parame= parame; 
+        }
 
 
         public override bool Equals(object obj)
@@ -52,6 +60,7 @@ namespace Parameterize
         public string Name { get => name; set => name = value; }
         public Type Subtype { get => subtype; set => subtype = value; }
         public ParameterAttribute Paramt { get => paramt; set => paramt = value; }
+        public ParameterAttribute Parame { get => parame; set => parame = value; }
 
         public Constraint GetConstraint()
         {
@@ -59,7 +68,12 @@ namespace Parameterize
                 return paramt.DefaultConstraint;
           
         }
-        
+        public Constraint GetElementConstraint()
+        {
+
+            return parame.DefaultConstraint;
+
+        }
     }
     
    

@@ -65,9 +65,9 @@ namespace Parameterize
         public void Set(string name,object value)
         {
            
-            if (descriptor.Descriptors.Exists((a) => a.Name == name))
+            if (descriptor.Descriptors.Exists((a) => a.Name.Split('/').First() == name.Split('/').First()))
             {
-                var d = descriptor.Descriptors.Where((a) => a.Name == name).FirstOrDefault();
+                //var d = descriptor.Descriptors.Where((a) => a.Name == name).FirstOrDefault();
                 //if(value.GetType().IsSubclassOf(d.Subtype))
                 if (values.ContainsKey(name))
                 {
@@ -127,36 +127,53 @@ namespace Parameterize
         }
         void fill(object item)
         {
-            
 
-                foreach (var i in Values.Keys)
+
+            foreach (var i in Values.Keys)
+            {
+                object value = Values[i];
+                var d = Descriptor;
+                var n = i.Split('/').First();
+                if (d.Get(n).Type == ParameterType.PARAMETERIZEDES)
                 {
-                    object value = Values[i];
-                    var d = Descriptor;
-
-                    if (d.Get(i).Type == ParameterType.PARAMETERIZEDES)
+                    if (get(item, i) == null)
                     {
-                        if (get(item,i) == null)
-                        {
-                            set(item,i, createList(d.Get(i).Subtype));
-                        }
-                        foreach (var x in (value as IList))
-                        {
-                            (get(item,i) as IList).Add((x as ParameterPack).Create());
-                        }
+                        set(item, i, createList(d.Get(i).Subtype));
                     }
-                    else if (d.Get(i).Type == ParameterType.PARAMETERPACK)
+                    foreach (var x in (value as IList))
                     {
+                        (get(item, i) as IList).Add((x as ParameterPack).Create());
+                    }
+                }
+                else if (d.Get(n).Type == ParameterType.PARAMETERPACK)
+                {
 
-                       set(item, i, (value as ParameterPack).Create());
+                    set(item, i, (value as ParameterPack).Create());
+                }
+                else if (d.Get(n).Type == ParameterType.ARRAY)
+                {
+                    var aname = i.Split('/')[0];
+                    if (int.TryParse(i.Split('/').Last(), out int c))
+                    {
+                        float[] a = (float[])get(item, aname);
+                        if (c < a.Length)
+                        {
+                            a[c] = (float)value;
+                            set(item, aname, a);
+                        }
                     }
                     else
                     {
-                        set(item, i, Convert.ChangeType(value, item.GetType().GetProperty(i).PropertyType));
+                        set(item, aname, new float[(int)((float)value)]);
                     }
-
                 }
-            
+                else
+                {
+                    set(item, i, Convert.ChangeType(value, item.GetType().GetProperty(i).PropertyType));
+                }
+
+            }
+
         }
     }
     

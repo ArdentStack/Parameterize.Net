@@ -74,13 +74,10 @@ namespace Parameterize
 
                 }else if(i.Type == ParameterType.ARRAY)
                 {
-                    if (parameters.ContainsKey(i.Name))
+                    parameters[i.Name] = new SingularModelParameter(getId(), false, i.GetConstraint());
+                    for(int j = 0; j < i.GetConstraint().MaxVal; j++)
                     {
-                        parameters[i.Name + "/"] = new MultiValueParameter(getId(), false, i, GetConstraint(i));
-                    }
-                    else
-                    {
-                        parameters[i.Name] = new MultiValueParameter(getId(), false, i, GetConstraint(i));
+                        parameters[i.Name + "/Element/" + j.ToString()] = new SingularModelParameter(getId(), false, i.GetElementConstraint());
                     }
                     
                 }
@@ -108,6 +105,7 @@ namespace Parameterize
         {
 
         }
+       
         Constraint GetConstraint(ParameterDescriptor d)
         {
             if (config != null)
