@@ -4,8 +4,6 @@ Parameterize.Net is a library that allows developers to represent complex object
 
 # Todo
 * Documentation and code comments
-* Allow for float array "parameters".
-* More flexible constraint definition
 * Implementing multitasking where possible.
 # Installation
 
@@ -35,6 +33,10 @@ abstract class Animal
     [Parameter(5, 45, 1)]
 
     public float Weight { get; set; }
+    //this stats array will have 5 floats ranging from 0 to 1
+    [Parameter(5,5)]
+    [ElementConstraint(0,1,10)]
+    public float[] SomeStats {get;set;}
     public override string ToString()
     {
         return $"Animal weighing {Weight} Kg ";
